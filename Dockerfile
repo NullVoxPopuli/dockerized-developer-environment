@@ -56,6 +56,7 @@ RUN echo \
   && useradd -u 1000 -r -g developer -d /developer -s /bin/bash -c "Software Developer" developer \
   && echo "developer ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/developer \
   && chown -R developer:developer /developer \
+  && chmod +x /developer/bin/* \
   && fc-cache -f -v \
   && mkdir -p /project
 
@@ -71,4 +72,4 @@ VOLUME ["/project"]
 
 USER developer
 
-ENTRYPOINT ["/developer/bin/start-shell"]
+ENTRYPOINT ["/developer/bin/devrun", "/usr/bin/urxvt"]
