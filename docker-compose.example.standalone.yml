@@ -1,0 +1,19 @@
+version: '3.4'
+
+volumes:
+  node-modules:
+  nuget-packages:
+
+services:
+  ide:
+    image: nullvoxpopuli/ide
+    command: /usr/bin/code /developer/project
+    environment:
+      - DISPLAY=unix$DISPLAY
+    volumes:
+      - ./:/workspace
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - $HOME/.vscode:/developer/.vscode
+      - $HOME/.atom:/developer/.atom
+      - nuget-packages:/developer/.nuget/packages
+      - node-modules:/developer/project/path/to/ui/node_modules

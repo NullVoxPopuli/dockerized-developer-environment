@@ -1,0 +1,36 @@
+version: '3.4'
+
+volumes:
+  node-modules:
+  nuget-packages:
+
+networks:
+  internet:
+  backoffice:
+
+services:
+  ide:
+    image: nullvoxpopuli/ide
+    command: /usr/bin/code /developer/project
+    environment:
+      - DISPLAY=unix$DISPLAY
+    volumes:
+      - ./:/workspace
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - $HOME/.vscode:/developer/.vscode
+      - $HOME/.atom:/developer/.atom
+      - nuget-packages:/developer/.nuget/packages
+      - node-modules:/developer/project/path/to/ui/node_modules
+
+  api:
+    image: microsoft/dotnet
+    command: bash -c "cd /app/api && dotnet watch run"
+    ports:
+      - '7001:7001'
+    expose:
+      - 7001
+    environment:
+      PORT: 7001
+    volumes:
+      - ./path/to-app:/app
+      - nuget-packages:/root/.nuget/packages
