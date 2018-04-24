@@ -8,10 +8,10 @@ URxvt.clipboard.copycmd:  xsel -ib
 URxvt.clipboard.pastecmd: xsel -ob
 
 URxvt.scrollBar: false
-URxvt.font: xft:DejaVu Sans Mono:size=13
-URxvt.boldFont: xft:DejaVu Sans Mono:style:Bold:size=13,xft:Unifont:size=13
-URxvt.ItalicFont: xft:DejaVu Sans Mono:style:Italic:size=13,xft:Unifont:size=13
-URxvt.boldItalicFont: xft:DejaVu Sans Mono:style:Bold Italic:size=13,xft:Unifont:size=13
+URxvt.font: xft:DejaVu Sans Mono:size=9
+URxvt.boldFont: xft:DejaVu Sans Mono:style:Bold:size=9,xft:Unifont:size=9
+URxvt.ItalicFont: xft:DejaVu Sans Mono:style:Italic:size=9,xft:Unifont:size=9
+URxvt.boldItalicFont: xft:DejaVu Sans Mono:style:Bold Italic:size=9,xft:Unifont:size=9
 URxvt.letterSpace: -1
 
 URxvt.depth: 32
@@ -19,3 +19,6 @@ URxvt.depth: 32
 URxvt.matcher.button: 1
 URxvt.url-select.underline: true
 URxvt.geometry: 100x24
+URxvt*loginShell: true
+URxvt*background: Black
+URxvt*foreground: White

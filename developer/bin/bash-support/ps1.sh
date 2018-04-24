@@ -25,9 +25,6 @@ custom_bash_prompt(){
 	# current directory
 	export PS1="$PS1$EMB\w"
 
-	# newline
-	export PS1="$PS1\n"
-
 	# current git branch
 	export PS1="$PS1$Y\$(__git_ps1) "
 

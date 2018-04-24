@@ -55,7 +55,9 @@ RUN echo \
   && groupadd -r developer -g 1000 \
   && useradd -u 1000 -r -g developer -d /developer -s /bin/bash -c "Software Developer" developer \
   && echo "developer ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/developer \
-  && chown -R developer:developer /developer
+  && chown -R developer:developer /developer \
+  && fc-cache -f -v \
+  && mkdir -p /project
 
 ENV SHELL /bin/bash
 
@@ -65,7 +67,7 @@ VOLUME ["/developer/.config/Code"]
 VOLUME ["/developer/.vscode"]
 VOLUME ["/developer/.atom"]
 VOLUME ["/developer/.ssh"]
-VOLUME ["/developer/project"]
+VOLUME ["/project"]
 
 USER developer
 

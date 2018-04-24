@@ -1,26 +1,18 @@
 # Load the Ruby Loader and auto-switcher
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-
-# This loads the node-version-manager
-[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
-# allows git usage in PS1
-source "$HOME/scripts/bash-support/git-prompt.sh"
-# Extend our path, include scripts, etc
-source "$HOME/scripts/bash-support/paths.sh"
-# allows having the current command running as the title of your terminal window
-source "$HOME/scripts/bash-support/current-command.sh"
-# custom PS1, configure by commenting out PS1= lines
-source "$HOME/scripts/bash-support/ps1.sh"
+source "$HOME/.nvm/nvm.sh"
+source "$HOME/bin/bash-support/git-prompt.sh"
+source "$HOME/bin/bash-support/paths.sh"
+source "$HOME/bin/bash-support/current-command.sh"
+source "$HOME/bin/bash-support/ps1.sh"
 
 export NVM_DIR="$HOME/.nvm"
 export NODE_PATH="$HOME/.npm/lib/node_modules:$NODE_PATH"
 
-
 # handy aliases
 # shopt -s direxpand
 shopt -s expand_aliases
-
 
 eval `dircolors -b`
 alias ls='ls --color=auto -h'
@@ -55,7 +47,6 @@ if [ -e /usr/share/terminfo/x/xterm-256color ]; then
 else
   export TERM='xterm-color'
 fi
-
 
 # http://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator
 # Prevents Ctrl+s and Ctrl+q from haulting vim sessions

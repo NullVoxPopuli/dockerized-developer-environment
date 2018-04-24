@@ -15,4 +15,4 @@ docker run -d \
   --entrypoint "urxvt" \
   nullvoxpopuli/ide
 
-  docker exec docker-vscode /developer/bin/devrun code
+  # docker exec docker-vscode /developer/bin/devrun code

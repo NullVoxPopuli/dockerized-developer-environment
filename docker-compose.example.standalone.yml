@@ -16,4 +16,4 @@ services:
       - $HOME/.vscode:/developer/.vscode
       - $HOME/.atom:/developer/.atom
       - nuget-packages:/developer/.nuget/packages
-      - node-modules:/developer/project/path/to/ui/node_modules
+      - node-modules:/project/path/to/ui/node_modules
